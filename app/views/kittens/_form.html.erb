@@ -1,0 +1,29 @@
+<style>
+div {
+  margin: 0.5rem 0rem;
+}
+</style>
+
+<%= form_with(model: @kitten, local: true) do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :age %>
+    <%= f.number_field :age, value: 0, min: 0 %>
+  </div>
+
+  <div>
+    <%= f.label :cuteness %>
+    <%= f.number_field :cuteness, value: 10, within: (0..10) %>
+  </div>
+
+  <div>
+    <%= f.label :softness %>
+    <%= f.number_field :softness, value: 10, within: (0..10) %>
+  </div>
+
+  <%= f.submit yield(:button_text) %>
+<% end %>
