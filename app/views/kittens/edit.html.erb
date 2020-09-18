@@ -2,3 +2,5 @@
 <% provide(:button_text, 'Edit kitten') %>
 
 <%= render "form" %>
+<%= link_to "Delete #{@kitten.name}", @kitten, method: :delete %>
+<br>

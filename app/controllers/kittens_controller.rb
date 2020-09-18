@@ -35,7 +35,11 @@ class KittensController < ApplicationController
     @kitten = Kitten.find(params[:id])
   end
 
-  def destroy; end
+  def destroy
+    Kitten.find(params[:id]).destroy
+
+    redirect_to kittens_path
+  end
 
   private
 

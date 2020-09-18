@@ -6,6 +6,7 @@
   <% @kittens.each do |kitten| %>
     <li>
       <%= link_to "#{kitten.name}, #{kitten.age}", kitten %> - <%= link_to 'edit', edit_kitten_path(kitten) %>
+      - <%= link_to 'delete', kitten, method: :delete %>
     </li>
   <% end %>
 </ul>
