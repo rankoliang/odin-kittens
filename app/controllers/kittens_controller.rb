@@ -11,7 +11,9 @@ class KittensController < ApplicationController
 
   def update; end
 
-  def show; end
+  def show
+    @kitten = Kitten.find(params[:id])
+  end
 
   def destroy; end
 end
